@@ -14,7 +14,7 @@ In particular, batch normalization when added after each convolution layer. Howe
 After training on input training data, we can perform inference on test data using either (Learn) or (Pred).
 When using (Learn), the batch normalization layers' expectation and variance are computed over the training data. 
 Conversely, when using (Pred), the batch normalization layers' expectation and variance are computed over the testing data. 
-Applying (Pred) on the generated weights and biases during inference, as mentioned in \cite{BN}, allows us to recover the original activations by setting $\gamma^{(k)} = \sqrt{\text{Var}[x^{(k)}]}$ and $\beta^{(k)} = \text{E}[x^{(k)}]$. 
+Applying (Pred) on the generated weights and biases during inference, allows us to recover the original activations by setting $\gamma^{(k)} = \sqrt{\text{Var}[x^{(k)}]}$ and $\beta^{(k)} = \text{E}[x^{(k)}]$. 
 It involves no cost, neither in time nor in training resources.
 This utilization of normalization is particularly important in domain shift scenarios, considering the performance gap observed between (Pred) and (Learn), as shown in the [article](links/Article.pdf) in Table 2, where (pred) outperform (Learn) at all tasks.
 
